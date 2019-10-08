@@ -1,0 +1,12 @@
+$('#apple-form').html("<%= j (render 'edit') %>");
+$('#apple-form').fadeIn(800);
+<% if @user.tel.nil? %>
+
+$('#tel').css('display', 'none').fadeIn(4000);
+<% end %>
+
+$('#tel-conf').css('display', 'none').fadeIn(400);
+
+<% if @user.tel.present? && @user.address.nil? %>
+$('#address').fadeIn(800);
+<% end %>

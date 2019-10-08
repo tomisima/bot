@@ -1,0 +1,14 @@
+$('#name_response').html("<%= j (render "edit") %>");
+$('#apple-form').fadeOut(0);
+
+<% if @user.name.present? %>
+$('#name-response').fadeIn(400);
+<% end %>
+
+<% if @user.name.present? %>
+$('#tel').fadeIn(1000);
+<% end %>
+
+
+
+

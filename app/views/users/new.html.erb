@@ -1,0 +1,33 @@
+<div class="line-bc">
+
+
+<div class="balloon6">
+    <div class="faceicon">
+        <%= image_tag 'TRTM9655_TP_V4',  class:"top-img" %>
+    </div>
+    
+    <div class="chatting">
+      <div class="says">
+            <p>お名前を入力してください<br>
+            <div id="apple-form">
+
+<%= simple_form_for @users, url: "/user/new", remote: true do |f| %>
+
+  <%= f.input :name %>
+  <%= f.button :submit ,"追加", id:"next" %>
+<% end %>
+
+</div>
+</p>
+        </div>
+    </div>
+</div>
+
+
+<%#= render "edit", id: @user %>
+
+<div id="name_response">
+    
+    
+</div>
+

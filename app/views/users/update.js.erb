@@ -1,0 +1,20 @@
+$('#name_response').html("<%= j (render "edit") %>");
+
+
+
+<% if @user.name.present? && @user.tel.nil? %>
+$('#tel-form').fadeOut(4000);
+<% end %>
+
+<% if @user.tel.present? && @user.address.nil? %>
+$('#tel-conf').fadeIn(400);
+
+
+<% end %>
+
+
+<% if @user.tel.present? && @user.address.nil? %>
+
+$('#address').fadeIn(1000);
+
+<% end %>

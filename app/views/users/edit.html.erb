@@ -1,0 +1,30 @@
+<%= @user.name %>
+
+
+<% if @user.tel.nil? %>
+<div id ="tel">
+<%= simple_form_for @user, url: "/user/#{@user.id}/update", remote: true do |f| %>
+  <%= f.input :tel %>
+  <%= f.button :submit ,"追加", id:"next" %>
+<% end %>
+</div>
+
+<script>
+    $('#tel').fadeOut(600);
+</script>
+<% end %>
+
+<% if @user.tel? %>
+<%= @user.name %>
+<%= @user.tel %>
+
+
+<div id ="address">
+<%= simple_form_for @user, url: "/user/update", remote: true do |f| %>
+  <%= f.input :address %>
+  <%= f.button :submit ,"追加", id:"" %>
+<% end %>
+</div>
+
+
+<% end %>

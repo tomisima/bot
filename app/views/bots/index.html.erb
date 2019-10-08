@@ -1,0 +1,42 @@
+<h1>Ajaxを使ってみよう</h1>
+<%= form_tag(url_for(:action => 'index'), :remote => true) do %>
+  <%= text_field_tag :name %>
+  <%= submit_tag "タイトルを変更する" %>
+<% end %>
+
+
+
+<h1>Bots#index</h1>
+<p>Find me in app/views/bots/index.html.erb</p>
+
+<div id="bot_app" style="padding-left: 40%; padding-right: 40%;">
+    
+    <bot-ui></bot-ui>
+</div>
+
+<p id="hoge">赤色になるよ</p>
+
+<script>
+     var botui = new BotUI('bot_app');
+
+      botui.action.text({
+  action: {
+    sub_type: 'name',
+    url: "/users/new",
+     type: "POST",
+    placeholder: 'Enter your text here'
+  }
+}).then(function (res) { // will be called when it is submitted.
+ 
+  console.log(res.value); // will print whatever was typed in the field.
+ 
+}).then(function () { // wait till previous message has been shown.
+
+        botui.message.add({
+          human: true,
+          delay: 1000,
+          content: 'Hello World from human!'
+        });
+      });
+</script>
+

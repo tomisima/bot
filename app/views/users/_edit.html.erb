@@ -1,0 +1,132 @@
+<div class="line-bc"><!--①LINE会話全体を囲う-->
+
+
+<!--step2 名前確認（create.js.erb)-->
+<% if @user.name.present? %>
+<div id="name-response">
+<div class="mycomment">
+   <p><%= @user.name %>です</p>
+  </div>
+
+
+<div class="balloon6">
+    <div class="faceicon">
+     <%= image_tag 'TRTM9655_TP_V4',  class:"top-img" %>
+    </div>
+    <div class="chatting">
+      <div class="says">
+          
+        <p><%= @user.name %>ですね。ありがとうございます。
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+<!--step3 tel入力 -->
+<% if @user.name.present? && @user.tel.nil? %>
+  <div id ="tel", style="display: none">
+<div class="balloon6">
+    <div class="faceicon">
+     <%= image_tag 'TRTM9655_TP_V4',  class:"top-img" %>
+    </div>
+    <div class="chatting">
+      <div class="says">
+        
+        <p>続いて電話番号を入力してください
+        
+        <div id="tel-form">
+        <%= simple_form_for @user, url: "/user/#{@user.id}/update", remote: true do |f| %>
+          <%= f.input :tel %>
+          <%= f.button :submit ,"追加", id:"next_after_tel" %>
+        <% end %>
+        </div>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<% end %>
+
+
+<!--step3 tel確認 -->
+
+<% if @user.tel.present? %>
+
+<div id ="tel">
+<div class="balloon6">
+    <div class="faceicon">
+     <%= image_tag 'TRTM9655_TP_V4',  class:"top-img" %>
+    </div>
+    <div class="chatting">
+      <div class="says">
+        <p>続いて電話番号を入力してください</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+<div id="tel-conf">
+<div>
+<div class="mycomment">
+   <p><%= @user.tel %>です</p>
+  </div>
+  
+  
+  <div class="balloon6">
+    <div class="faceicon">
+     <%= image_tag 'TRTM9655_TP_V4',  class:"top-img" %>
+    </div>
+    <div class="chatting">
+      <div class="says">
+          
+        <p><%= @user.tel %>ですね。ありがとうございます。
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
+
+
+<!--step4 住所入力 -->
+<% if @user.address.nil? && @user.tel.present?  %>
+  <div id ="address", style="display: none">
+<div class="balloon6">
+    <div class="faceicon">
+     <%= image_tag 'TRTM9655_TP_V4',  class:"top-img" %>
+    </div>
+    <div class="chatting">
+      <div class="says">
+         
+        <p>続いて住所を入力してください
+        
+       <div id="address-form">
+        <%= simple_form_for @user, url: "/user/#{@user.id}/update_last", remote: true do |f| %>
+          <%= f.input :address %>
+          <%= f.button :submit ,"追加", id:"next_after_tel" %>
+        <% end %>
+        </div>
+        </div>
+
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+</div><!--/①LINE会話終了-->

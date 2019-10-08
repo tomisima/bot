@@ -1,0 +1,4 @@
+<%= simple_form_for @users, url: "/user/new", remote: true do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit ,"追加" %>
+<% end %>

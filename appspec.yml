@@ -5,7 +5,7 @@ files:
     destination: /bot
 hooks:
   BeforeInstall:
-    - location: /bot/scripts/before-install.sh
+    - location: ./scripts/before-install.sh
       timeout: 900
   AfterInstall:
     - location: ./scripts/after-install.sh

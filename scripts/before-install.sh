@@ -1,5 +1,4 @@
-
-rt FOLDER=/home/ec2-user/environment/bot
+export FOLDER=/home/ec2-user/environment/bot
 
 if [ -d $FOLDER ]
 then

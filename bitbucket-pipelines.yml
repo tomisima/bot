@@ -1,0 +1,22 @@
+- pipe: atlassian/aws-code-deploy:0.2.9
+  variables:
+    AWS_ACCESS_KEY_ID: '<string>'
+    AWS_SECRET_ACCESS_KEY: '<string>'
+    AWS_DEFAULT_REGION: '<string>'
+    APPLICATION_NAME: '<string>'
+    COMMAND: '<string>' # 'upload' or 'deploy'.
+
+    # Common variables
+    # S3_BUCKET: '<string>' # Optional.
+    # VERSION_LABEL: '<string>' # Optional.
+    # DEBUG: '<boolean>' # Optional.
+
+    # Upload variables
+    # ZIP_FILE: '<string>'
+
+    # Deploy variables
+    # DEPLOYMENT_GROUP: '<string>'
+    # FILE_EXISTS_BEHAVIOR: '<string>' # Optional.
+    # IGNORE_APPLICATION_STOP_FAILURES: '<boolean>' # Optional.
+    # WAIT: '<boolean>' # Optional.
+    # EXTRA_ARGS: '<string>' # Optional.

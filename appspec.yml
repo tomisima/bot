@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: ./install.txt
-    destination: /bot
+    destination: ~/environment/bot
 hooks:
   BeforeInstall:
     - location: ./scripts/before-install.sh

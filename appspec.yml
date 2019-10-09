@@ -2,10 +2,10 @@ version: 0.0
 os: linux
 files:
   - source: ./install.txt
-    destination: /tmp/CodeDeployExample
+    destination: /bot
 hooks:
   BeforeInstall:
-    - location: ./scripts/before-install.sh
+    - location: /bot/scripts/before-install.sh
       timeout: 900
   AfterInstall:
     - location: ./scripts/after-install.sh
